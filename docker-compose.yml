@@ -1,0 +1,15 @@
+version: "3"
+
+name: "lfs"
+
+services:
+  lfs:
+    build: https://github.com/shelmangroup/lfs-server-s3.git#s3
+    environment:
+      - LFS_PUBLIC=true
+      - LFS_S3ENDPOINT=https://nextlab.hwangsehyun.com:41443/s3
+      - LFS_S3BUCKET=lfs
+      - LFS_S3REGION=ap-northeast-2
+    ports:
+      - 8080:8080
+
